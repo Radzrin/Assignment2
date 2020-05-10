@@ -149,6 +149,15 @@ class Account{
     give = sc.nextLine();
     if(id==1){
        /**
+        * checks to see if you don't send more then you have 
+        */ 
+     while(transfer > balance1) {
+      System.out.println("Error: you can't send more then you currently have");
+      System.out.println("Please put another value");
+       transfer = sc.nextInt();  
+     }
+     
+       /**
      * check to see if you don't send money to yourself
      */
     while(give.equals(You)){
@@ -158,17 +167,25 @@ class Account{
     if (give.equals(Matthew)){
     int remove = balance1 - transfer; 
     int add = balance2+ transfer;
-    System.out.println("Now"+"you have"+add+"$"+"and" +"Matthew"+"has"+remove+"$");
+    System.out.println("Now Matthew has"+add+"$"+" and You have "+remove+"$");
     }else{
     int remove = balance1 - transfer; 
-    int add = balance1+ transfer;    
-    System.out.println("Now"+"you have"+add+"$"+"and" +"name1"+"has"+remove+"$");    
+    int add = balance3+ transfer;    
+    System.out.println("Now Justin has "+add+"$"+" and you have "+remove+"$");    
     }
     }
     /**
      * transfer from Matthew
      */
     if(id==2){
+    /**
+    * checks to see if you don't send more then you have 
+    */ 
+     while(transfer > balance1) {
+     System.out.println("Error: you can't send more then you currently have");
+     System.out.println("Please put another value");
+     transfer = sc.nextInt();  
+     }   
      /**
      * check to see if you don't send money to yourself
      */
@@ -186,6 +203,14 @@ class Account{
      * transfer from Justin 
      */
     if(id==3){
+    /**
+    * checks to see if you don't send more then you have 
+    */ 
+     while(transfer > balance1) {
+     System.out.println("Error: you can't send more then you currently have");
+     System.out.println("Please put another value");
+     transfer = sc.nextInt();  
+     }       
      /**
      * check to see if you don't send money to yourself
      */
@@ -263,6 +288,6 @@ class Account{
     System.exit(0);
     break;  
     }
-      
- }
+}  
+ 
 }
