@@ -22,18 +22,31 @@ class Account{
  String name;  
  int savings;  
  
-  
+ /**
+  * 
+  * @param balance
+  * @param name
+  * @param savings 
+  */ 
  Account(int balance, String name, int savings){  
  this.balance =balance;  
  this.name =name;  
  this.savings =savings;  
  } 
  
+ /**
+  *
+  * @return 
+  */
+ @Override
   public String toString(){ 
   return balance+"      "+name+"      "+savings;  
  }  
 
-
+/**
+ * 
+ * @param args 
+ */
  public static void main(String[] args){
   /**
    * Variables
@@ -148,9 +161,10 @@ class Account{
     System.out.println("to whom?"+" You, Matthew or Justin?");
     give = sc.nextLine();
     if(id==1){
-       /**
-        * checks to see if you don't send more then you have 
-        */ 
+        
+    /**
+    * checks to see if you don't send more then you have 
+    */ 
      while(transfer > balance1) {
       System.out.println("Error: you can't send more then you currently have");
       System.out.println("Please put another value");
