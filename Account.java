@@ -72,6 +72,9 @@ class Account{
   String You ="You";
   String Justin ="Justin";
   String give;
+  String answer;
+  String no = "no";
+  String yes = "yes";
   int balance1 =999; 
   int balance2 =3405;
   int balance3 = 101;
@@ -156,12 +159,23 @@ class Account{
      * transfer money
      */
     case 2:
+     do{     
     System.out.println("How much do you want to tansfer");
     transfer = sc.nextInt();
     System.out.println("to whom?"+" You, Matthew or Justin?");
     give = sc.nextLine();
     if(id==1){
-        
+      /**
+       * send all money warning
+       */  
+   if(transfer == balance1){
+    } else {
+    System.out.println("Are you sure you want to give ALL your funds to " + give+"?");
+    System.out.println("yes or no");
+    answer =sc.nextLine();
+    }while(answer.equals(no)); 
+    }
+   
     /**
     * checks to see if you don't send more then you have 
     */ 
@@ -195,7 +209,7 @@ class Account{
     /**
     * checks to see if you don't send more then you have 
     */ 
-     while(transfer > balance1) {
+     while(transfer > balance2) {
      System.out.println("Error: you can't send more then you currently have");
      System.out.println("Please put another value");
      transfer = sc.nextInt();  
@@ -220,7 +234,7 @@ class Account{
     /**
     * checks to see if you don't send more then you have 
     */ 
-     while(transfer > balance1) {
+     while(transfer > balance3) {
      System.out.println("Error: you can't send more then you currently have");
      System.out.println("Please put another value");
      transfer = sc.nextInt();  
