@@ -14,13 +14,14 @@ import  java.util.Scanner;
  * 18 5$ bills
  * 
  * 
- * @author Christopher Benson
+ * @author Radzrin
  * @since 2020-05-06
  */
 class Account{  
  int balance;  
  String name;  
  int savings;  
+ 
   
  Account(int balance, String name, int savings){  
  this.balance =balance;  
@@ -29,7 +30,7 @@ class Account{
  } 
  
   public String toString(){ 
-  return balance+" "+name+" "+savings;  
+  return balance+"      "+name+"      "+savings;  
  }  
 
 
@@ -58,12 +59,18 @@ class Account{
   String You ="You";
   String Justin ="Justin";
   String give;
+  int balance1 =999; 
+  int balance2 =3405;
+  int balance3 = 101;
+  int savings1 =325; 
+  int savings2 =600;
+  int savings3 = 56;
+  
+  System.out.println("WELCOME BACK!!!"); 
   
     Scanner sc = new Scanner(System.in);
-    
-    accounts = sc.nextInt();
-   
-   System.out.println("Who might you be ?");
+
+   System.out.println("Who might you be ? press 0 to exit");
    System.out.println("");
    System.out.println("1.You");
    System.out.println("");
@@ -71,25 +78,30 @@ class Account{
    System.out.println("");
    System.out.println("3.Matthew");
    System.out.println("");
+   accounts = sc.nextInt();        
     
-    
+   int id = accounts;
+   String person = Integer.toString(id);
     /**
-     * check accounts
+     * choose an account
      */    
     switch(accounts) {
     case 1:
     System.out.println("accessing your account");
-    System.out.println("balance"+" "+"name"+" "+"savings");
+    System.out.println("");
+    System.out.println("balance"+"||"+"name"+"||"+"savings");
     System.out.println(s1);
     break;
     case 2:
     System.out.println("accessing Matthew's account");
-    System.out.println("balance"+" "+"name"+" "+"savings");
+    System.out.println("");
+    System.out.println("balance"+"||"+"name"+"||"+"savings");
     System.out.println(s2);
     break;
     case 3:
     System.out.println("accessing Justin's account");
-    System.out.println("balance"+" "+"name"+" "+"savings");
+    System.out.println("");
+    System.out.println("balance"+"||"+"name"+"||"+"savings");
     System.out.println(s3);
     break;
     case 0:
@@ -97,8 +109,12 @@ class Account{
     System.exit(0);
     break;
     } 
-    menus = sc.nextInt();
-      
+    /**
+     * select a menu
+     */
+    System.out.println("");
+    System.out.println("choose one of the menus"); 
+    System.out.println("");
     System.out.println("________________"+"  "+"_____________________");
     System.out.println("| 1. Get cash  |"+"  "+"| 2. transfer money |");
     System.out.println("________________"+"  "+"_____________________");
@@ -110,45 +126,127 @@ class Account{
     System.out.println("___________");
     System.out.println("| 0. exit |");
     System.out.println("___________");
-
-
+    menus = sc.nextInt();
+    
+    /**
+     * withdraw money from account
+     */
     switch(menus) {
     case 1:
     System.out.println("");
     System.out.println("How much do you want to  withdraw ?");
     withdraw = sc.nextInt();
+    
     System.out.println("You get "+"bill");
     break;
+    /**
+     * transfer money
+     */
     case 2:
     System.out.println("How much do you want to tansfer");
     transfer = sc.nextInt();
-    System.out.println("to whom?");
+    System.out.println("to whom?"+" You, Matthew or Justin?");
     give = sc.nextLine();
+    /**
+     * check to see if you don't send money to yourself
+     */
+    while(give.equals(person)){
+    System.out.println("Error: You cannot send money to yourself"); 
+    give = sc.nextLine(); 
+    }
+    if(id==1){
+    if (give.equals(Matthew)){
+    int remove = balance1 - transfer; 
+    int add = balance2+ transfer;
+    System.out.println("Now"+"you have"+add+"$"+"and" +"Matthew"+"has"+remove+"$");
+    }else{
+    int remove = balance1 - transfer; 
+    int add = balance1+ transfer;    
+    System.out.println("Now"+"you have"+add+"$"+"and" +"name1"+"has"+remove+"$");    
+    }
+    }
+    /**
+     * transfer from Matthew
+     */
+    if(id==2){
     if (give.equals(You)){
-    int remove = balance- transfer;    
-    System.out.println("Now"+"you have"+"amm"+"$"+"and" +"name1"+"has"+"amm"+"$");
+    int remove = balance - transfer; 
+    int add = balance2+ transfer;
+    System.out.println("Now"+"Matthew has"+add+"$"+"and" +"name1"+"has"+remove+"$");
+    }
+    }
+    /**
+     * transfer from Justin 
+     */
+    if(id==3){
+    if (give.equals(You)){
+    int remove = balance- transfer; 
+    int add = balance3+ transfer;
+    System.out.println("Now"+"Justin has"+add+"$"+"and" +"name1"+"has"+remove+"$");
+    }
     }
     break;
+    /**
+     * deposit
+     */
     case 3:
-    System.out.println("How much do you want to deposit?");
+     if(id==1){   
     System.out.println("do you want to put it in your (1)balance or (2)savings account");
     choose = sc.nextInt();
-    if(choose == 1 ){
-      int add = put + balance; 
-     System.out.println("name"+ "balance is "+add+"$"); 
+    if(choose == 1 ){   
+    System.out.println("How much do you want to deposit?");
+    put = sc.nextInt();  
+    int add = put + balance1; 
+    System.out.println("your balance is "+add+"$"); 
     }else{
-    put=sc.nextInt();
-    int add = put + savings;
+    put = sc.nextInt();     
+    int add = put + savings1;
     System.out.println("your savings is "+add+"$");
     }
+    }
+    if(id==2){   
+    System.out.println("do you want to put it in your (1)balance or (2)savings account");
+    choose = sc.nextInt();
+    if(choose == 1 ){   
+    System.out.println("How much do you want to deposit?");
+    put = sc.nextInt();  
+    int add = put + balance2; 
+    System.out.println("Matthew's balance is "+add+"$"); 
+    }else{
+    put = sc.nextInt();     
+    int add = put + savings2;
+    System.out.println("Matthew's savings is "+add+"$");
+    }
+    }
+    if(id==3){   
+    System.out.println("do you want to put it in your (1)balance or (2)savings account");
+    choose = sc.nextInt();
+    if(choose == 1 ){   
+    System.out.println("How much do you want to deposit?");
+    put = sc.nextInt();  
+    int add = put + balance3; 
+    System.out.println("Justin's balance is "+add+"$"); 
+    }else{
+    put = sc.nextInt();     
+    int add = put + savings3;
+    System.out.println("Justin's savings is "+add+"$");
+    }
+    }
     break;  
+    /**
+     * see payments
+     */
     case 4:
     System.out.println("");
     
     System.out.println("");
-    break;  
+    break; 
+    /**
+     * end program
+     */
     case 0:
     System.out.println("goodbye");
+    System.exit(0);
     break;  
     }
       
