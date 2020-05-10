@@ -26,7 +26,8 @@ class Account{
      
   int accounts; 
   int menus;
-     
+  int withdraw;    
+  
     Scanner sc = new Scanner(System.in);
     
     accounts = sc.nextInt();
@@ -53,6 +54,27 @@ class Account{
     } 
     menus = sc.nextInt();
       
+    System.out.println("________________");
+    System.out.println("| 1. Get cash  |");
+    System.out.println("________________");
+    
+    System.out.println("_____________________");
+    System.out.println("| 2. transfer money |");
+    System.out.println("_____________________");
+    
+    System.out.println("______________");
+    System.out.println("| 3. Deposit |");
+    System.out.println("______________");
+    
+    System.out.println("________________");
+    System.out.println("| 4. Payments  |");
+    System.out.println("________________");
+    
+    System.out.println("___________");
+    System.out.println("| 0. exit |");
+    System.out.println("___________");
+
+
     switch(menus) {
     case 1:
     System.out.println("");
@@ -62,7 +84,10 @@ class Account{
     break;
     case 3:
     System.out.println("");
-    break;    
+    break;  
+    case 0:
+    System.out.println("");
+    break;  
     }
       
  }
