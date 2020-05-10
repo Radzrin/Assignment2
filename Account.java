@@ -159,22 +159,13 @@ class Account{
      * transfer money
      */
     case 2:
-     do{     
+          
     System.out.println("How much do you want to tansfer");
     transfer = sc.nextInt();
     System.out.println("to whom?"+" You, Matthew or Justin?");
     give = sc.nextLine();
-    if(id==1){
-      /**
-       * send all money warning
-       */  
-   if(transfer == balance1){
-    } else {
-    System.out.println("Are you sure you want to give ALL your funds to " + give+"?");
-    System.out.println("yes or no");
-    answer =sc.nextLine();
-    }while(answer.equals(no)); 
-    }
+    if(id==1){ 
+    
    
     /**
     * checks to see if you don't send more then you have 
@@ -304,7 +295,22 @@ class Account{
      * see payments
      */
     case 4:
-    System.out.println("");
+    System.out.println("Accessing past purchases");
+    if(id==1){
+    System.out.println("items   ||     Price");   
+    System.out.println("bag     ||     50$");
+    }
+    if(id==2){
+    System.out.println("items   ||     Price");   
+    System.out.println("Plane ticket || 1000$");
+    System.out.println("apples || 10$");
+    System.out.println("Crazy Glue || 15$");
+    System.out.println("mc Donalds || 20$");
+    }
+    if(id==3){
+    System.out.println("items   ||     Price");   
+    System.out.println("No recent Purchases");
+    }
     
     System.out.println("");
     break; 
