@@ -147,14 +147,14 @@ class Account{
     transfer = sc.nextInt();
     System.out.println("to whom?"+" You, Matthew or Justin?");
     give = sc.nextLine();
-    /**
+    if(id==1){
+       /**
      * check to see if you don't send money to yourself
      */
-    while(give.equals(person)){
+    while(give.equals(You)){
     System.out.println("Error: You cannot send money to yourself"); 
     give = sc.nextLine(); 
-    }
-    if(id==1){
+    }    
     if (give.equals(Matthew)){
     int remove = balance1 - transfer; 
     int add = balance2+ transfer;
@@ -169,6 +169,13 @@ class Account{
      * transfer from Matthew
      */
     if(id==2){
+     /**
+     * check to see if you don't send money to yourself
+     */
+    while(give.equals(Matthew)){
+    System.out.println("Error: You cannot send money to yourself"); 
+    give = sc.nextLine(); 
+    }    
     if (give.equals(You)){
     int remove = balance - transfer; 
     int add = balance2+ transfer;
@@ -179,6 +186,13 @@ class Account{
      * transfer from Justin 
      */
     if(id==3){
+     /**
+     * check to see if you don't send money to yourself
+     */
+    while(give.equals(Justin)){
+    System.out.println("Error: You cannot send money to yourself"); 
+    give = sc.nextLine(); 
+    }    
     if (give.equals(You)){
     int remove = balance- transfer; 
     int add = balance3+ transfer;
