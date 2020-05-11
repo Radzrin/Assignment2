@@ -243,9 +243,14 @@ class Account{
     give = sc.nextLine(); 
     }    
     if (give.equals(You)){
-    int remove = balance- transfer; 
-    int add = balance3+ transfer;
-    System.out.println("Now"+"Justin has"+add+"$"+"and" +"name1"+"has"+remove+"$");
+    int remove = balance3- transfer; 
+    int add = balance1+ transfer;
+    System.out.println("Now You have "+add+"$"+" and Justin has "+remove+"$");
+    }
+    if (give.equals(Matthew)){
+    int remove = balance3- transfer; 
+    int add = balance2+ transfer;
+    System.out.println("Now Matthew has "+add+"$"+"and Justin has "+remove+"$");
     }
     }
     break;
