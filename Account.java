@@ -18,9 +18,9 @@ import  java.util.Scanner;
  * @since 2020-05-06
  */
 class Account{  
- int balance;  
- String name;  
- int savings;  
+ public int balance;  
+ public String name;  
+ public int savings;  
  
  /**
   * 
@@ -153,13 +153,15 @@ class Account{
     System.out.println("How much do you want to  withdraw ?");
     withdraw = sc.nextInt();
     
+    System.out.println("");
     System.out.println("You get "+"bill");
     break;
     /**
      * transfer money
      */
     case 2:
-          
+    
+    System.out.println("");    
     System.out.println("How much do you want to tansfer");
     transfer = sc.nextInt();
     System.out.println("to whom?"+" You, Matthew or Justin?");
@@ -171,6 +173,7 @@ class Account{
     * checks to see if you don't send more then you have 
     */ 
      while(transfer > balance1) {
+      System.out.println("");    
       System.out.println("Error: you can't send more then you currently have");
       System.out.println("Please put another value");
        transfer = sc.nextInt();  
@@ -180,16 +183,19 @@ class Account{
      * check to see if you don't send money to yourself
      */
     while(give.equals(You)){
+    System.out.println("");     
     System.out.println("Error: You cannot send money to yourself"); 
     give = sc.nextLine(); 
     }    
     if (give.equals(Matthew)){
     int remove = balance1 - transfer; 
     int add = balance2+ transfer;
+    System.out.println("");
     System.out.println("Now Matthew has"+add+"$"+" and You have "+remove+"$");
     }else{
     int remove = balance1 - transfer; 
-    int add = balance3+ transfer;    
+    int add = balance3+ transfer; 
+    System.out.println(""); 
     System.out.println("Now Justin has "+add+"$"+" and you have "+remove+"$");    
     }
     }
@@ -201,6 +207,7 @@ class Account{
     * checks to see if you don't send more then you have 
     */ 
      while(transfer > balance2) {
+     System.out.println("");    
      System.out.println("Error: you can't send more then you currently have");
      System.out.println("Please put another value");
      transfer = sc.nextInt();  
@@ -209,17 +216,20 @@ class Account{
      * check to see if you don't send money to yourself
      */
     while(give.equals(Matthew)){
+    System.out.println("");    
     System.out.println("Error: You cannot send money to yourself"); 
     give = sc.nextLine(); 
     }    
     if (give.equals(You)){
     int remove = balance2 - transfer; 
     int add = balance1+ transfer;
+    System.out.println("");
     System.out.println("Now You have "+add+"$"+" and Matthew has "+remove+"$");
     }
     if (give.equals(Justin)){
     int remove = balance2 - transfer; 
     int add = balance3+ transfer;
+    System.out.println("");
     System.out.println("Now Justin have "+add+"$"+" and Matthew has "+remove+"$");
     }
     }
@@ -231,6 +241,7 @@ class Account{
     * checks to see if you don't send more then you have 
     */ 
      while(transfer > balance3) {
+     System.out.println("");    
      System.out.println("Error: you can't send more then you currently have");
      System.out.println("Please put another value");
      transfer = sc.nextInt();  
@@ -239,17 +250,20 @@ class Account{
      * check to see if you don't send money to yourself
      */
     while(give.equals(Justin)){
+    System.out.println("");    
     System.out.println("Error: You cannot send money to yourself"); 
     give = sc.nextLine(); 
     }    
     if (give.equals(You)){
     int remove = balance3- transfer; 
     int add = balance1+ transfer;
+    System.out.println("");
     System.out.println("Now You have "+add+"$"+" and Justin has "+remove+"$");
     }
     if (give.equals(Matthew)){
     int remove = balance3- transfer; 
     int add = balance2+ transfer;
+    System.out.println("");
     System.out.println("Now Matthew has "+add+"$"+"and Justin has "+remove+"$");
     }
     }
@@ -258,45 +272,57 @@ class Account{
      * deposit
      */
     case 3:
-     if(id==1){   
+     if(id==1){ 
+    System.out.println("");     
     System.out.println("do you want to put it in your (1)balance or (2)savings account");
     choose = sc.nextInt();
     if(choose == 1 ){   
+    System.out.println("");
     System.out.println("How much do you want to deposit?");
     put = sc.nextInt();  
     int add = put + balance1; 
+    System.out.println("");
     System.out.println("your balance is "+add+"$"); 
     }else{
     put = sc.nextInt();     
     int add = put + savings1;
+    System.out.println("");
     System.out.println("your savings is "+add+"$");
     }
     }
-    if(id==2){   
+    if(id==2){ 
+    System.out.println("");    
     System.out.println("do you want to put it in your (1)balance or (2)savings account");
     choose = sc.nextInt();
-    if(choose == 1 ){   
+    if(choose == 1 ){ 
+    System.out.println("");    
     System.out.println("How much do you want to deposit?");
     put = sc.nextInt();  
     int add = put + balance2; 
+    System.out.println("");
     System.out.println("Matthew's balance is "+add+"$"); 
     }else{
     put = sc.nextInt();     
     int add = put + savings2;
+    System.out.println("");
     System.out.println("Matthew's savings is "+add+"$");
     }
     }
     if(id==3){   
+    System.out.println("");    
     System.out.println("do you want to put it in your (1)balance or (2)savings account");
     choose = sc.nextInt();
-    if(choose == 1 ){   
+    if(choose == 1 ){ 
+    System.out.println("");    
     System.out.println("How much do you want to deposit?");
     put = sc.nextInt();  
     int add = put + balance3; 
+    System.out.println("");
     System.out.println("Justin's balance is "+add+"$"); 
     }else{
     put = sc.nextInt();     
     int add = put + savings3;
+    System.out.println("");
     System.out.println("Justin's savings is "+add+"$");
     }
     }
@@ -305,17 +331,18 @@ class Account{
      * see payments
      */
     case 4:
+    System.out.println("");    
     System.out.println("Accessing past purchases");
     if(id==1){
     System.out.println("items   ||     Price");   
     System.out.println("bag     ||     50$");
     }
     if(id==2){
-    System.out.println("items   ||     Price");   
+    System.out.println("items________||_Price");   
     System.out.println("Plane ticket || 1000$");
-    System.out.println("apples || 10$");
-    System.out.println("Crazy Glue || 15$");
-    System.out.println("mc Donalds || 20$");
+    System.out.println("apples       || 10$");
+    System.out.println("Crazy Glue   || 15$");
+    System.out.println("mc Donalds   || 20$");
     }
     if(id==3){
     System.out.println("items   ||     Price");   
