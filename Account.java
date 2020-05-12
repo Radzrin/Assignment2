@@ -20,7 +20,11 @@ import  java.util.Scanner;
 class Account{  
  public int balance;  
  public String name;  
- public int savings;  
+ public int savings;
+ public int accNum;
+ public String credit;
+ public String card;
+         
  
  /**
   * 
@@ -51,9 +55,9 @@ class Account{
   /**
    * Variables
    */   
-  Account s1=new Account(999,"you",325);  
-  Account s2=new Account(3405,"Justin",600);
-  Account s3=new Account(101,"Matthew",56);  
+  Account s1=new Account(105075,"you",3250);  
+  Account s2=new Account(340595,"Matthew",6000);
+  Account s3=new Account(90255,"Justin",5600);  
   int accounts; 
   int menus;
   int withdraw;
@@ -73,17 +77,18 @@ class Account{
   String answer;
   String no = "no";
   String yes = "yes";
-  int balance1 =999; 
-  int balance2 =3405;
-  int balance3 = 101;
-  int savings1 =325; 
-  int savings2 =600;
-  int savings3 = 56;
+  int balance1 =105075; 
+  int balance2 =340595;
+  int balance3 = 90255;
+  int savings1 =3250; 
+  int savings2 =6000;
+  int savings3 = 5600;
   
-  System.out.println("WELCOME BACK!!!"); 
+   System.out.println("WELCOME BACK!!!"); 
   
-    Scanner sc = new Scanner(System.in);
+   Scanner sc = new Scanner(System.in);
 
+    
    System.out.println("Who might you be ? press 0 to exit");
    System.out.println("");
    System.out.println("1.You");
@@ -282,18 +287,18 @@ class Account{
     System.out.println("you now have "+rest2+ " in your account");
     }
     }else{
-     if(id==1){    
-     System.out.println("");  
-     System.out.println("you now have "+rest3+ " in your account");
-     }
-     if(id==2){ 
-     System.out.println("");  
-     System.out.println("you now have "+rest4+ " in your account");
-     }
-     if(id==3){ 
-     System.out.println("");  
-     System.out.println("you now have "+rest5+ " in your account");
-     }
+    if(id==1){    
+    System.out.println("");  
+    System.out.println("you now have "+rest3+ " in your account");
+    }
+    if(id==2){ 
+    System.out.println("");  
+    System.out.println("you now have "+rest4+ " in your account");
+    }
+    if(id==3){ 
+    System.out.println("");  
+    System.out.println("you now have "+rest5+ " in your account");
+    }
     }
 
     break;
@@ -314,16 +319,16 @@ class Account{
     /**
     * checks to see if you don't send more then you have 
     */ 
-     while(transfer > balance1) {
-      System.out.println("");    
-      System.out.println("Error: you can't send more then you currently have");
-      System.out.println("Please put another value");
-       transfer = sc.nextInt();  
+    while(transfer > balance1) {
+    System.out.println("");    
+    System.out.println("Error: you can't send more then you currently have");
+    System.out.println("Please put another value");
+    transfer = sc.nextInt();  
      }
      
-       /**
-     * check to see if you don't send money to yourself
-     */
+    /**
+    * check to see if you don't send money to yourself
+    */
     while(give.equals(You)){
     System.out.println("");     
     System.out.println("Error: You cannot send money to yourself"); 
@@ -372,7 +377,7 @@ class Account{
     int remove = balance2 - transfer; 
     int add = balance3+ transfer;
     System.out.println("");
-    System.out.println("Now Justin have "+add+"$"+" and Matthew has "+remove+"$");
+    System.out.println("Now Justin has "+add+"$"+" and Matthew has "+remove+"$");
     }
     }
     /**
@@ -416,7 +421,8 @@ class Account{
     case 3:
      if(id==1){ 
     System.out.println("");     
-    System.out.println("do you want to put it in your (1)balance or (2)savings account");
+    System.out.println("do you want to put it in your (1)balance or "
+            + "(2)savings account");
     choose = sc.nextInt();
     if(choose == 1 ){   
     System.out.println("");
@@ -434,7 +440,8 @@ class Account{
     }
     if(id==2){ 
     System.out.println("");    
-    System.out.println("do you want to put it in your (1)balance or (2)savings account");
+    System.out.println("do you want to put it in your (1)balance or "
+            + "(2)savings account");
     choose = sc.nextInt();
     if(choose == 1 ){ 
     System.out.println("");    
@@ -452,7 +459,8 @@ class Account{
     }
     if(id==3){   
     System.out.println("");    
-    System.out.println("do you want to put it in your (1)balance or (2)savings account");
+    System.out.println("do you want to put it in your (1)balance or "
+            + "(2)savings account");
     choose = sc.nextInt();
     if(choose == 1 ){ 
     System.out.println("");    
