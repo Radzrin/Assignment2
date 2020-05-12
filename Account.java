@@ -149,9 +149,9 @@ class Account{
     switch(menus) {
     case 1:
     System.out.println("");
-    System.out.println("Take from 1 balance or 2 savings?");
+    System.out.println("Take from 1 account or 2 savings?");
     choise = sc.nextInt();
-    if(choise == 2){
+    if(choise == 1){
     System.out.println("How much do you want to  withdraw ?");
     withdraw = sc.nextInt();
     
@@ -167,7 +167,7 @@ class Account{
     while(id==3 && withdraw> balance3){
     System.out.println("Error: you can't pull out more than what you have");     
     }
-    if(choise==1){
+    if(choise==2){
     while(id==1 && withdraw> savings1){
     System.out.println("Error: you can't pull out more than what you have");     
     }
@@ -257,16 +257,45 @@ class Account{
 
     idk5--;
     b5++;
-    }        
-            
+    } 
+    int rest = withdraw - savings1;
+    int rest1 = withdraw - savings2;
+    int rest2 = withdraw - savings3;
+    int rest3 = withdraw - balance1;
+    int rest4 = withdraw - balance2;
+    int rest5 = withdraw - balance3;
     
     String  total ="you recieve "+b100+" 100$ bills + "+b50+" 50$ bills + "
     +b20 +" 20$ bills + "+ b10+" 10$ bills + "+b5+ " 5$ bill";
     System.out.println(total.trim()); 
+    if(choise==2){
+    if(id==1){  
+    System.out.println(""); 
+    System.out.println("you now have "+rest+" in your account");
+    }
+    if(id==2){  
+    System.out.println(""); 
+    System.out.println("you now have "+rest1+" in your account");
+    }
+    if(id==3){  
+    System.out.println(""); 
+    System.out.println("you now have "+rest2+ " in your account");
+    }
+    }else{
+     if(id==1){    
+     System.out.println("");  
+     System.out.println("you now have "+rest3+ " in your account");
+     }
+     if(id==2){ 
+     System.out.println("");  
+     System.out.println("you now have "+rest4+ " in your account");
+     }
+     if(id==3){ 
+     System.out.println("");  
+     System.out.println("you now have "+rest5+ " in your account");
+     }
+    }
 
-    
-    System.out.println("");
-    System.out.println("You get "+"bill");
     break;
     }
     
