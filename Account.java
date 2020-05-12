@@ -73,7 +73,6 @@ class Account{
   String Matthew ="Matthew";
   String You ="You";
   String Justin ="Justin";
-  String give;
   String answer;
   String no = "no";
   String yes = "yes";
@@ -87,8 +86,7 @@ class Account{
    System.out.println("WELCOME BACK!!!"); 
   
    Scanner sc = new Scanner(System.in);
-
-    
+   try {
    System.out.println("Who might you be ? press 0 to exit");
    System.out.println("");
    System.out.println("1.You");
@@ -128,6 +126,7 @@ class Account{
     System.exit(0);
     break;
     } 
+    do{
     /**
      * select a menu
      */
@@ -263,12 +262,12 @@ class Account{
     idk5--;
     b5++;
     } 
-    int rest = withdraw - savings1;
-    int rest1 = withdraw - savings2;
-    int rest2 = withdraw - savings3;
-    int rest3 = withdraw - balance1;
-    int rest4 = withdraw - balance2;
-    int rest5 = withdraw - balance3;
+    int rest =savings1-withdraw;
+    int rest1 =savings2-withdraw;
+    int rest2 =savings3-withdraw;
+    int rest3 =balance1-withdraw;
+    int rest4 =balance2- withdraw;
+    int rest5 =balance3-withdraw;
     
     String  total ="you recieve "+b100+" 100$ bills + "+b50+" 50$ bills + "
     +b20 +" 20$ bills + "+ b10+" 10$ bills + "+b5+ " 5$ bill";
@@ -312,6 +311,7 @@ class Account{
     System.out.println("How much do you want to tansfer");
     transfer = sc.nextInt();
     System.out.println("to whom?"+" You, Matthew or Justin?");
+    String give = sc.nextLine();
     give = sc.nextLine();
     if(id==1){ 
     
@@ -338,7 +338,7 @@ class Account{
     int remove = balance1 - transfer; 
     int add = balance2+ transfer;
     System.out.println("");
-    System.out.println("Now Matthew has"+add+"$"+" and You have "+remove+"$");
+    System.out.println("Now Matthew has "+add+"$"+" and You have "+remove+"$");
     }else{
     int remove = balance1 - transfer; 
     int add = balance3+ transfer; 
@@ -509,6 +509,15 @@ class Account{
     System.exit(0);
     break;  
     }
+    System.out.println("Are you sure you want to leave? yes/no");
+    answer = sc.nextLine();
+    answer = sc.nextLine();
+   }while(answer.equals("no"));
+   }catch(Exception e) {
+   System.out.println("Error something went wrong");  
+   
+   }
+   }
 }  
 
-}
+
