@@ -150,7 +150,21 @@ class Account{
     System.out.println("");
     System.out.println("How much do you want to  withdraw ?");
     withdraw = sc.nextInt();
-    
+    /**
+     * makes sure you don't withdraw more than you have
+     */
+    while(id==1 && withdraw> balance1){
+    System.out.println("Error: you can't pull out more than what you have");     
+    }
+    while(id==2 && withdraw> balance2){
+    System.out.println("Error: you can't pull out more than what you have");     
+    }
+    while(id==3 && withdraw> balance3){
+    System.out.println("Error: you can't pull out more than what you have");     
+    }
+    /**
+     * challenge part
+     */
     int div5 = withdraw%5;    
     while (div5!=0){
     System.out.println("please put in a number divisible by 5");
@@ -374,7 +388,7 @@ class Account{
     System.out.println("");    
     System.out.println("Accessing past purchases");
     if(id==1){
-    System.out.println("items   ||     Price");   
+    System.out.println("items___||_____Price");   
     System.out.println("bag     ||     50$");
     }
     if(id==2){
