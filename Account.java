@@ -59,15 +59,12 @@ class Account{
   int withdraw;
   int put;
   int transfer;
-  int ammount;
-  int ammountSave;
-  int bill100;
-  int bill50;
-  int bill20;
-  int bill10;
-  int toonie;
-  int loonie;
   int choose;
+  int b5=0;
+  int b10=0;
+  int b20=0;
+  int b50=0;
+  int b100=0;
   String Matthew ="Matthew";
   String You ="You";
   String Justin ="Justin";
@@ -146,12 +143,56 @@ class Account{
     
     /**
      * withdraw money from account
+     * challenge
      */
     switch(menus) {
     case 1:
     System.out.println("");
     System.out.println("How much do you want to  withdraw ?");
     withdraw = sc.nextInt();
+    
+    int div5 = withdraw%5;    
+    while (div5!=0){
+    System.out.println("please put in a number divisible by 5");
+    withdraw =sc.nextInt();
+    div5 = withdraw%5;
+    }   
+    int idk = withdraw/100;
+    while(idk>=1){
+    idk--;
+    b100++;
+    }
+    int remainings = withdraw - (b100*100);
+    int idk2 = remainings/50;
+    while(idk2>=1){
+    idk2--;
+    b50++;
+    }   
+    int remainings1 = remainings - (b50*50);   
+    int idk3 = remainings1/20;
+    while(idk3>=1){
+    idk3--;
+    b20++;
+    }       
+    int remainings2 = remainings1 - (b20*20);    
+    int idk4 = remainings2/10;
+    while(idk4>=1){
+    idk4--;
+    b10++;
+    }   
+    int remainings3 = remainings2 - (b10*10);
+    
+    int idk5 = remainings3/5;
+    while(idk5>=1){
+
+    idk5--;
+    b5++;
+    }
+    
+    String  total ="you recieve "+b100+" 100$ bills + "+b50+" 50$ bills + "
+    +b20 +" 20$ bills + "+ b10+" 10$ bills + "+b5+ " 5$ bill";
+    System.out.println(total.trim()); 
+
     
     System.out.println("");
     System.out.println("You get "+"bill");
@@ -160,7 +201,6 @@ class Account{
      * transfer money
      */
     case 2:
-    
     System.out.println("");    
     System.out.println("How much do you want to tansfer");
     transfer = sc.nextInt();
@@ -360,5 +400,4 @@ class Account{
     break;  
     }
 }  
- 
 }
