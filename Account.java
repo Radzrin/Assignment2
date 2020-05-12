@@ -60,6 +60,7 @@ class Account{
   int put;
   int transfer;
   int choose;
+  int choise;
   int b5=0;
   int b10=0;
   int b20=0;
@@ -148,8 +149,12 @@ class Account{
     switch(menus) {
     case 1:
     System.out.println("");
+    System.out.println("Take from 1 balance or 2 savings?");
+    choise = sc.nextInt();
+    if(choise == 2){
     System.out.println("How much do you want to  withdraw ?");
     withdraw = sc.nextInt();
+    
     /**
      * makes sure you don't withdraw more than you have
      */
@@ -161,6 +166,17 @@ class Account{
     }
     while(id==3 && withdraw> balance3){
     System.out.println("Error: you can't pull out more than what you have");     
+    }
+    if(choise==1){
+    while(id==1 && withdraw> savings1){
+    System.out.println("Error: you can't pull out more than what you have");     
+    }
+    while(id==2 && withdraw> savings2){
+    System.out.println("Error: you can't pull out more than what you have");     
+    }
+    while(id==3 && withdraw> savings3){
+    System.out.println("Error: you can't pull out more than what you have");     
+    }
     }
     /**
      * challenge part
@@ -202,6 +218,47 @@ class Account{
     idk5--;
     b5++;
     }
+    /**
+     * challenge part
+     */
+    div5 = withdraw%5;    
+    while (div5!=0){
+    System.out.println("please put in a number divisible by 5");
+    withdraw =sc.nextInt();
+    div5 = withdraw%5;
+    }   
+    idk = withdraw/100;
+    while(idk>=1){
+    idk--;
+    b100++;
+    }
+    remainings = withdraw - (b100*100);
+    idk2 = remainings/50;
+    while(idk2>=1){
+    idk2--;
+    b50++;
+    }   
+    remainings1 = remainings - (b50*50);   
+    idk3 = remainings1/20;
+    while(idk3>=1){
+    idk3--;
+    b20++;
+    }       
+    remainings2 = remainings1 - (b20*20);    
+    idk4 = remainings2/10;
+    while(idk4>=1){
+    idk4--;
+    b10++;
+    }   
+    remainings3 = remainings2 - (b10*10);
+    
+    idk5 = remainings3/5;
+    while(idk5>=1){
+
+    idk5--;
+    b5++;
+    }        
+            
     
     String  total ="you recieve "+b100+" 100$ bills + "+b50+" 50$ bills + "
     +b20 +" 20$ bills + "+ b10+" 10$ bills + "+b5+ " 5$ bill";
@@ -211,6 +268,8 @@ class Account{
     System.out.println("");
     System.out.println("You get "+"bill");
     break;
+    }
+    
     /**
      * transfer money
      */
@@ -414,4 +473,5 @@ class Account{
     break;  
     }
 }  
+
 }
