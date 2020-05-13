@@ -380,9 +380,42 @@ class Account{
     System.out.println("to whom?"+" You, Matthew or Justin?");
     String give = sc.nextLine();
     give = sc.nextLine();
-    if(id==1){ 
-    
-   
+      /**
+     * makes sure you want to send all of your money
+     */
+    while(id==1 && transfer==balance1){
+    System.out.println("are you sure you want to pull out all your money?"); 
+    answ = sc.nextLine();
+    if (answ.equals("no")){
+    System.out.println("chose another amount ");   
+    transfer = sc.nextInt();
+    }else{
+    continue;   
+    }
+    }
+    while(id==2 && transfer==balance2){
+    System.out.println("are you sure you want to pull out all your money?"); 
+    answ = sc.nextLine();
+    if (answ.equals("no")){
+    System.out.println("chose another amount ");   
+    transfer = sc.nextInt();
+    }else{
+    continue;   
+    }
+    }   
+    while(id==3 && transfer==balance3){
+    System.out.println("are you sure you want to pull out all your money?"); 
+    answ = sc.nextLine();
+    if (answ.equals("no")){
+    System.out.println("chose another amount ");   
+    transfer = sc.nextInt();
+    }else{
+    continue;   
+    }
+    }
+    }    
+  
+    if(id==1){   
     /**
     * checks to see if you don't send more then you have 
     */ 
