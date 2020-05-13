@@ -65,6 +65,7 @@ class Account{
   int transfer;
   int choose;
   int choise;
+  String answ;
   int b5=0;
   int b10=0;
   int b20=0;
@@ -84,7 +85,7 @@ class Account{
    System.out.println("WELCOME BACK!!!"); 
   
    Scanner sc = new Scanner(System.in);
-   try {
+   try{
    System.out.println("Who might you be ? press 0 to exit");
    System.out.println("");
    System.out.println("1.You");
@@ -179,6 +180,76 @@ class Account{
     while(id==3 && withdraw> savings3){
     System.out.println("Error: you can't pull out more than what you have");     
     }
+    /**
+     * makes sure you want to send all of your money
+     */
+    if(choise==1){
+    while(id==1 && withdraw==balance1){
+    System.out.println("are you sure you want to pull out all your money?"); 
+    answ = sc.nextLine();
+    if (answ.equals("no")){
+    System.out.println("chose another amount ");   
+    withdraw = sc.nextInt();
+    }else{
+    continue;   
+    }
+    }
+    while(id==2 && withdraw==balance2){
+    System.out.println("are you sure you want to pull out all your money?"); 
+    answ = sc.nextLine();
+    if (answ.equals("no")){
+    System.out.println("chose another amount ");   
+    withdraw = sc.nextInt();
+    }else{
+    continue;   
+    }
+    }   
+    while(id==3 && withdraw==balance3){
+    System.out.println("are you sure you want to pull out all your money?"); 
+    answ = sc.nextLine();
+    if (answ.equals("no")){
+    System.out.println("chose another amount ");   
+    withdraw = sc.nextInt();
+    }else{
+    continue;   
+    }
+    }
+    }    
+    /**
+     * makes sure if you want to take everything out of your savings account
+     */
+    if(choise==2){
+    while(id==1 && withdraw==savings1){
+    System.out.println("are you sure you want to pull out all your money?"); 
+    answ = sc.nextLine();
+    if (answ.equals("no")){
+    System.out.println("chose another amount ");   
+    withdraw = sc.nextInt();
+    }else{
+    continue;   
+    }
+    }
+    }
+    while(id==2 && withdraw==savings2){
+    System.out.println("are you sure you want to pull out all your money?"); 
+    answ = sc.nextLine();
+    if (answ.equals("no")){
+    System.out.println("chose another amount ");   
+    withdraw = sc.nextInt();
+    }else{
+    continue;   
+    }
+    }   
+    while(id==3 && withdraw==savings3){
+    System.out.println("are you sure you want to pull out all your money?"); 
+    answ = sc.nextLine();
+    if (answ.equals("no")){
+    System.out.println("chose another amount ");   
+    withdraw = sc.nextInt();
+    }else{
+    continue;   
+    }
+    }
     }
     /**
      * challenge part
@@ -216,7 +287,6 @@ class Account{
     
     int idk5 = remainings3/5;
     while(idk5>=1){
-
     idk5--;
     b5++;
     }
@@ -256,7 +326,6 @@ class Account{
     
     idk5 = remainings3/5;
     while(idk5>=1){
-
     idk5--;
     b5++;
     } 
@@ -297,7 +366,7 @@ class Account{
     System.out.println("you now have "+rest5+ " in your account");
     }
     }
-
+    
     break;
     }
     
