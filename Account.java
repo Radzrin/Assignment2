@@ -413,7 +413,7 @@ class Account{
     continue;   
     }
     }
-    }    
+        
   
     if(id==1){   
     /**
@@ -513,8 +513,8 @@ class Account{
     System.out.println("");
     System.out.println("Now Matthew has "+add+"$"+"and Justin has "+remove+"$");
     }
-    }
     break;
+    }
     /**
      * deposit
      */
@@ -538,6 +538,9 @@ class Account{
     System.out.println("your savings is "+add+"$");
     }
     }
+    /**
+     * if you are Matthew
+     */
     if(id==2){ 
     System.out.println("");    
     System.out.println("do you want to put it in your (1)balance or "
@@ -578,7 +581,7 @@ class Account{
     }
     break;  
     /**
-     * see payments
+     * see ecent transactions
      */
     case 4:
     System.out.println("");    
@@ -613,6 +616,9 @@ class Account{
     answer = sc.nextLine();
     answer = sc.nextLine();
    }while(answer.equals("no"));
+    /**
+     * catch mistake
+     */
    }catch(InputMismatchException e) {
    System.out.println("Error something went wrong");  
    
