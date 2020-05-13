@@ -1,4 +1,5 @@
 import  java.util.Scanner;
+import java.util.InputMismatchException;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -46,7 +47,6 @@ class Account{
   public String toString(){ 
   return balance+"      "+name+"      "+savings;  
  }  
-
 /**
  * 
  * @param args 
@@ -70,18 +70,16 @@ class Account{
   int b20=0;
   int b50=0;
   int b100=0;
-  String Matthew ="Matthew";
-  String You ="You";
-  String Justin ="Justin";
+  String Matthew="Matthew";
+  String You="You";
+  String Justin="Justin";
   String answer;
-  String no = "no";
-  String yes = "yes";
-  int balance1 =105075; 
-  int balance2 =340595;
-  int balance3 = 90255;
-  int savings1 =3250; 
-  int savings2 =6000;
-  int savings3 = 5600;
+  int balance1=105075; 
+  int balance2=340595;
+  int balance3= 90255;
+  int savings1=3250; 
+  int savings2=6000;
+  int savings3=5600;
   
    System.out.println("WELCOME BACK!!!"); 
   
@@ -513,7 +511,7 @@ class Account{
     answer = sc.nextLine();
     answer = sc.nextLine();
    }while(answer.equals("no"));
-   }catch(Exception e) {
+   }catch(InputMismatchException e) {
    System.out.println("Error something went wrong");  
    
    }
